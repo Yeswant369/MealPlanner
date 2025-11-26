@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Indian Meal Planner</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- ====== 1. LANDING ====== -->
+  <section id="landing" class="glass">
+    <h1>Indian Meal Planner</h1>
+    <label>Weight (kg)
+      <input type="number" id="weight" min="30" max="200" placeholder="70"/>
+    </label>
+    <label>Protein goal (g/day)
+      <input type="number" id="proteinGoal" min="40" max="300" placeholder="120"/>
+    </label>
+    <button id="startBtn">Show me foods</button>
+  </section>
+
+  <!-- ====== 2. FOOD GRID (always visible after click) ====== -->
+  <section id="foodSec" class="hidden">
+    <h2>Pick foods you like</h2>
+    <div id="productGrid" class="grid"></div>
+  </section>
+
+  <!-- ====== 3. CART BAR (always at bottom) ====== -->
+  <div id="cartBar" class="cart-bar hidden">
+    <span id="cartInfo">Cart empty</span>
+    <button id="genBtn" class="gen-btn">Generate plan 🍽️</button>
+  </div>
+
+  <!-- ====== 4. RESULT MODAL ====== -->
+  <div id="resultModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <h3>Your personal meal plan</h3>
+      <pre id="planText"></pre>
+      <button id="newPlanBtn">Make another plan</button>
+    </div>
+  </div>
+
+  <!-- ====== 5. TOAST ====== -->
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

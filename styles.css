@@ -1,0 +1,184 @@
+:root {
+  --primary: #00796b;
+  --glass: rgba(255 255 255 / 0.3);
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #bbdefb);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+}
+.hidden { display: none !important; }
+
+/* 1. LANDING */
+#landing {
+  text-align: center;
+  max-width: 380px;
+  width: 100%;
+}
+#landing h1 { margin-bottom: 20px; }
+#landing label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+#landing input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+#startBtn {
+  margin-top: 20px;
+  width: 100%;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+#startBtn:hover { background: #004d40; }
+
+/* 2. FOOD SECTION */
+#foodSec {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 30px;
+}
+#foodSec h2 { text-align: center; margin-bottom: 20px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+.card h3 {
+  font-size: 18px;
+  color: var(--primary);
+}
+.nutri-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.add-btn {
+  margin-top: 10px;
+  background: #4db6ac;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* 3. CART BAR */
+.cart-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  z-index: 1000;
+}
+.gen-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.gen-btn:hover { background: #004d40; }
+
+/* 4. MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.modal-content {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 30px 40px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+#closeModal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+#planText {
+  white-space: pre-wrap;
+  margin: 15px 0;
+}
+#newPlanBtn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* 5. TOAST */
+.toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #333;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: var(--transition);
+}
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
