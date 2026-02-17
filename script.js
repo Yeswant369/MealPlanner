@@ -1,5 +1,5 @@
 // ---------- CONFIG ----------
-const GEMINI_KEY = "AIzaSyBwl2qk-k1Gvp05a7xVUf1Gg_q-2xNJ0LU"; // ← your key
+const GEMINI_KEY = ""; // ← your key
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`;
 
 // ---------- DOM ----------
@@ -120,3 +120,4 @@ startBtn.addEventListener("click", () => {
   cartBar.classList.remove("hidden");
   renderGrid();
 });
+
