@@ -81,7 +81,7 @@ genBtn.addEventListener("click",async()=>{
 
   const prompt=`I weigh ${w} kg and need ${p} g protein daily.
 Create a simple 1-day Indian vegetarian meal plan using ONLY these foods: ${names}.
-Include quantities and total protein & calories.`;
+Include quantities and total protein & calories.i need the result in proper Bullet-points.`;
 
   planText.textContent="Generating...";
   resultModal.classList.remove("hidden");
@@ -112,3 +112,4 @@ startBtn.addEventListener("click",()=>{
   cartBar.classList.remove("hidden");
   renderGrid();
 });
+
